@@ -1,0 +1,10 @@
+Preguntas orientadoras
+1- Los perfiles (líneas o familias de productos) desarrollados por ARM están comprendidos por las líneas Cortex A, R y M.
+Cortex A -> procesadores de alto rendimiento orientados a sistemas operativos y aplicaciones
+Cortex R-> procesadores orientados a aplicaciones de tiempo real, baja latencia y alta capacidad de procesamiento
+Cortex M-> procesadores orientados a sistemas embebidos compactos de consumo masivo
+
+Cortex M
+1- 
+Cortex M0/M0+: procesadores de bajo costo y bajo consumo.
+CortexM3/M4: procesadores de mayor performance que los M0. Agregan funcionalidades para DSP, modos provilegiados, FPU, etc.
