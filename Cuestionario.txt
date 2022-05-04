@@ -8,3 +8,5 @@ Cortex M
 1- 
 Cortex M0/M0+: procesadores de bajo costo y bajo consumo.
 CortexM3/M4: procesadores de mayor performance que los M0. Agregan funcionalidades para DSP, modos provilegiados, FPU, etc.
+
+4- Los procesadores Cortex M cuentan con un mapa de memoria lineal plano de 4 GB. 
