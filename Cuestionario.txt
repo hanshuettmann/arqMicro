@@ -6,8 +6,13 @@ Cortex M-> procesadores orientados a sistemas embebidos compactos de consumo mas
 
 Cortex M
 1- 
-Cortex M0/M0+: procesadores de bajo costo y bajo consumo.
-CortexM3/M4: procesadores de mayor performance que los M0. Agregan funcionalidades para DSP, modos provilegiados, FPU, etc.
+Cortex M0/M0+: procesadores de bajo costo y bajo consumo. Poseen arquitectura ARMv6-M y arquitectura de memoria de Von Neumann.
+CortexM3/M4: procesadores de mayor performance que los M0. Agregan funcionalidades para DSP, modos provilegiados, FPU, etc. Basados en arquitectura ARMv7E-M y arquitectura de memoria Harvard.
 
-4- Los procesadores Cortex M cuentan con un mapa de memoria lineal plano de 4 GB. 
+2-  Se dice que el set de instrucciones Thumb permite mayor densidad de código ya que permite realizar las mismas tareas empleando un tamaño de programa menor, reduciendo costo y consumo de energíá al utilizar un microcontrolador con menor tamaño de memoria flash.
+
+4- Los procesadores Cortex M cuentan con un mapa de memoria lineal plano de 4 GB. El mapa se encuentra dividido en distintas regiones, donde todas las funcionalidades del micro (como por ejemplo, los periféricos) están mapeadas en esta memoria.
+
 17- Reloj del sistema. Utilizado para contar tiempos de tareas. Cada cuenta hace un nuevo llamado al scheduler.
+
+18- Permite definir accesos privilegiados y no privilegiados a determinados espacios de memoria, limitando acceso a recursos a través del MPU. Es decir, puede quitar la capacidad de acceso a determinadas secciones de la memoria.
