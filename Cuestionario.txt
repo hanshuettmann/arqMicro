@@ -11,8 +11,14 @@ CortexM3/M4: procesadores de mayor performance que los M0. Agregan funcionalidad
 
 2-  Se dice que el set de instrucciones Thumb permite mayor densidad de código ya que permite realizar las mismas tareas empleando un tamaño de programa menor, reduciendo costo y consumo de energíá al utilizar un microcontrolador con menor tamaño de memoria flash.
 
+3- Compuesta por 2 instrucciones de acceso a memoria, una carga el registro y la otra guarda de nuevo a memoria. Todo tipo de instrucciones excepto 2 funcionan de esta manera. 
+
 4- Los procesadores Cortex M cuentan con un mapa de memoria lineal plano de 4 GB. El mapa se encuentra dividido en distintas regiones, donde todas las funcionalidades del micro (como por ejemplo, los periféricos) están mapeadas en esta memoria.
 
-17- Reloj del sistema. Utilizado para contar tiempos de tareas. Cada cuenta hace un nuevo llamado al scheduler.
+17- Reloj del sistema. Utilizado para contar tiempos de tareas. Implementado por RTOS como base de tiempo. Cada cuenta hace un nuevo llamado al scheduler.
 
 18- Permite definir accesos privilegiados y no privilegiados a determinados espacios de memoria, limitando acceso a recursos a través del MPU. Es decir, puede quitar la capacidad de acceso a determinadas secciones de la memoria.
+
+20- Excepción que utiliza el SO para tareas que demandan tiempo. Normalmente se le asigna la prioridad más baja.
+
+ISA (Instruction Set Architecture)
