@@ -33,4 +33,5 @@ ISA (Instruction Set Architecture)
 
 1- Los sufijos son opciones que pueden agregarse a la instrucción para realizar tareas distintas como corrimiento de bits o desplazamientos.
 
+2- El sufijo 's' se utiliza para actualizar los flags de estado.
 
