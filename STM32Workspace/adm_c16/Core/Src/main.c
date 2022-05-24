@@ -160,7 +160,6 @@ int main(void) {
 	MX_USB_OTG_FS_PCD_Init();
 	/* USER CODE BEGIN 2 */
 	PrivilegiosSVC();
-
 	const uint32_t Resultado = asm_sum(5, 3);
 
 	/* USER CODE END 2 */
@@ -171,8 +170,6 @@ int main(void) {
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
-		HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
-		HAL_Delay(500);
 	}
 	/* USER CODE END 3 */
 }
@@ -235,12 +232,13 @@ void scalar16(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
 void scalar12(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
 		uint16_t scalar) {
 	uint16_t *const vectorEnd = vectorIn + length;
-	uint16_t const MAX_BITS = 0x0FFF;
+	uint16_t const MAX_VALUE = 4095;
 
 	for (; vectorIn < vectorEnd; ++vectorIn) {
 		/* Remove 4 MSB */
 		*vectorOut = *vectorIn * scalar;
-		*vectorOut = *vectorOut & MAX_BITS;
+		if (*vectorOut > MAX_VALUE)
+			*vectorOut = MAX_VALUE;
 		++vectorOut;
 	}
 }
