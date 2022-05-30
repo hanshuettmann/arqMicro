@@ -144,3 +144,60 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-05-24 19:02:03.635
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-05-24 20:06:05.019 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-05-24 20:06:13.308
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-05-24 20:06:13.358
+!MESSAGE Log4j initialized with config file C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-05-24 20:06:18.995
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-24 21:13:49.839
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Src/asm_func.S
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-24 21:14:12.781
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-24 21:14:18.966
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Src/asm_func.S
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 4 2022-05-24 21:14:34.256
+!MESSAGE NullPointerException while trying to calculated source lookup path. This can be ignored if it occurs while terminating a debug session. See Bug 500988.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.collectSubstitutionsPaths(GdbSourceLookupDirector.java:102)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.collectSubstitutionsPaths(GdbSourceLookupDirector.java:146)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.getSubstitutionsPaths(GdbSourceLookupDirector.java:72)
+	at org.eclipse.cdt.dsf.gdb.service.GDBSourceLookup.getSubstitutionsPaths(GDBSourceLookup.java:124)
+	at org.eclipse.cdt.dsf.gdb.service.GDBSourceLookup.sourceContainersChanged(GDBSourceLookup.java:139)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupParticipant.sourceContainersChangedOnDispatchThread(GdbSourceLookupParticipant.java:120)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupParticipant$1.run(GdbSourceLookupParticipant.java:85)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+!SESSION 2022-05-30 15:02:26.094 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-05-30 15:02:30.732
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-05-30 15:02:30.783
+!MESSAGE Log4j initialized with config file C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-05-30 15:02:39.327
+!MESSAGE Started RMI Server, listening on port 41337
