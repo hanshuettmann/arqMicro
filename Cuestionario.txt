@@ -35,3 +35,5 @@ ISA (Instruction Set Architecture)
 
 2- El sufijo 's' se utiliza para actualizar los flags de estado.
 
+4- Por convención del fabricante, los argumentos de las funciones son recibidos en los primeros 4 registros de propósito general r0, r1, r2 y r3. Si son necesarios más de 4 parámetros, es necesario utilizar el stack para la copia y uso de parámetros. El resultado de la función es almacenado para su retorno en r0 en caso de ser de 32 bits ó en r0 y r1 en caso de ser de 64bits. Para poder regresar a la dirección de memoria correspondiente, se utiliza el link register lr para almacenar la dirección de la instrucción siguiente a la función que se ha llamado actualmente.
+
