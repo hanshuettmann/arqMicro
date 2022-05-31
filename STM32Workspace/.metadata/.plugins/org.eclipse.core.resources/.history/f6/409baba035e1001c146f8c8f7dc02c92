@@ -145,6 +145,6 @@
         strh r4, [r1], 2    @ sizeof(uint16_t) == 2, *vectorOut++ = r4
         subs r2, 1          @ --longitud
         bne .asm_scalar12_loop
-        pop {r5}
         pop {r4}
+        pop {r5}
         bx lr
