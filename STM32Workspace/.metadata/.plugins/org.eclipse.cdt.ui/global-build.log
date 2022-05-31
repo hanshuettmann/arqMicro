@@ -1,116 +1,4 @@
-21:41:51 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
-  158 |  const uint32_t Resultado = asm_sum(5, 3);
-      |                 ^~~~~~~~~
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-c:\st\stm32cubeide_1.8.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/main.o: in function `main':
-C:/Hans/UBA/Arq Micro/arqMicro/STM32Workspace/adm_c16/Debug/../Core/Src/main.c:165: undefined reference to `asm_zeros'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:64: adm_c16.elf] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-21:42:20 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12412	     20	   3492	  15924	   3e34	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-22:09:33 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12416	     20	   3492	  15928	   3e38	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-22:12:31 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-size   adm_c16.elf 
-   text	   data	    bss	    dec	    hex	filename
-  12416	     20	   3492	  15928	   3e38	adm_c16.elf
-Finished building: default.size.stdout
- 
-22:13:38 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-size   adm_c16.elf 
-   text	   data	    bss	    dec	    hex	filename
-  12416	     20	   3492	  15928	   3e38	adm_c16.elf
-Finished building: default.size.stdout
- 
-22:20:23 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12420	     20	   3492	  15932	   3e3c	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-22:23:56 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12416	     20	   3492	  15928	   3e38	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-22:24:22 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12416	     20	   3492	  15928	   3e38	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-22:31:36 **** Incremental Build of configuration Debug for project adm_c16 ****
+19:51:35 **** Incremental Build of configuration Debug for project adm_c16 ****
 make -j12 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
@@ -125,98 +13,14 @@ arm-none-eabi-size   adm_c16.elf
 arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
 arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
    text	   data	    bss	    dec	    hex	filename
-  12436	     20	   3492	  15948	   3e4c	adm_c16.elf
+  12400	     20	   3492	  15912	   3e28	adm_c16.elf
 Finished building: default.size.stdout
  
 Finished building: adm_c16.bin
  
 Finished building: adm_c16.list
  
-22:32:17 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:167:15: warning: passing argument 1 of 'asm_scalar16' from incompatible pointer type [-Wincompatible-pointer-types]
-  167 |  asm_scalar16(vecIn, vecOut, vecSize, factor);
-      |               ^~~~~
-      |               |
-      |               uint32_t * {aka long unsigned int *}
-In file included from ../Core/Src/main.c:25:
-../Core/Inc/asm_func.h:10:29: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
-   10 | void asm_scalar16(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
-      |                   ~~~~~~~~~~^~~~~~~~
-../Core/Src/main.c:167:22: warning: passing argument 2 of 'asm_scalar16' from incompatible pointer type [-Wincompatible-pointer-types]
-  167 |  asm_scalar16(vecIn, vecOut, vecSize, factor);
-      |                      ^~~~~~
-      |                      |
-      |                      uint32_t * {aka long unsigned int *}
-In file included from ../Core/Src/main.c:25:
-../Core/Inc/asm_func.h:10:49: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
-   10 | void asm_scalar16(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
-      |                                       ~~~~~~~~~~^~~~~~~~~
-../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
-  158 |  const uint32_t Resultado = asm_sum(5, 3);
-      |                 ^~~~~~~~~
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12456	     20	   3492	  15968	   3e60	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-22:34:51 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:167:17: error: conflicting types for 'factor'
-  167 |  const uint16_t factor = 4;
-      |                 ^~~~~~
-../Core/Src/main.c:162:17: note: previous definition of 'factor' was here
-  162 |  const uint32_t factor = 4;
-      |                 ^~~~~~
-../Core/Src/main.c:168:17: error: conflicting types for 'vecSize'
-  168 |  const uint16_t vecSize = sizeof(vecIn) / sizeof(uint16_t);
-      |                 ^~~~~~~
-../Core/Src/main.c:163:17: note: previous definition of 'vecSize' was here
-  163 |  const uint32_t vecSize = sizeof(vecIn) / sizeof(uint32_t);
-      |                 ^~~~~~~
-../Core/Src/main.c:172:15: warning: passing argument 1 of 'asm_scalar16' from incompatible pointer type [-Wincompatible-pointer-types]
-  172 |  asm_scalar16(vecIn, vecOut, vecSize, factor);
-      |               ^~~~~
-      |               |
-      |               uint32_t * {aka long unsigned int *}
-In file included from ../Core/Src/main.c:25:
-../Core/Inc/asm_func.h:10:29: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
-   10 | void asm_scalar16(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
-      |                   ~~~~~~~~~~^~~~~~~~
-../Core/Src/main.c:172:22: warning: passing argument 2 of 'asm_scalar16' from incompatible pointer type [-Wincompatible-pointer-types]
-  172 |  asm_scalar16(vecIn, vecOut, vecSize, factor);
-      |                      ^~~~~~
-      |                      |
-      |                      uint32_t * {aka long unsigned int *}
-In file included from ../Core/Src/main.c:25:
-../Core/Inc/asm_func.h:10:49: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
-   10 | void asm_scalar16(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
-      |                                       ~~~~~~~~~~^~~~~~~~~
-../Core/Src/main.c:166:11: warning: unused variable 'vecOut16' [-Wunused-variable]
-  166 |  uint16_t vecOut16[] = { 0, 0, 0 };
-      |           ^~~~~~~~
-../Core/Src/main.c:165:11: warning: unused variable 'vecIn16' [-Wunused-variable]
-  165 |  uint16_t vecIn16[] = { 5, 10, 3 };
-      |           ^~~~~~~
-../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
-  158 |  const uint32_t Resultado = asm_sum(5, 3);
-      |                 ^~~~~~~~~
-make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-22:35:15 **** Incremental Build of configuration Debug for project adm_c16 ****
+19:54:31 **** Incremental Build of configuration Debug for project adm_c16 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
@@ -230,14 +34,14 @@ arm-none-eabi-size   adm_c16.elf
 arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
 arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
    text	   data	    bss	    dec	    hex	filename
-  12504	     20	   3492	  16016	   3e90	adm_c16.elf
+  12524	     20	   3492	  16036	   3ea4	adm_c16.elf
 Finished building: default.size.stdout
  
 Finished building: adm_c16.bin
  
 Finished building: adm_c16.list
  
-22:36:47 **** Incremental Build of configuration Debug for project adm_c16 ****
+19:55:47 **** Incremental Build of configuration Debug for project adm_c16 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
@@ -251,212 +55,17 @@ arm-none-eabi-size   adm_c16.elf
 arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
 arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
    text	   data	    bss	    dec	    hex	filename
-  12504	     20	   3492	  16016	   3e90	adm_c16.elf
+  12524	     20	   3492	  16036	   3ea4	adm_c16.elf
 Finished building: default.size.stdout
  
 Finished building: adm_c16.bin
  
 Finished building: adm_c16.list
  
-22:39:21 **** Incremental Build of configuration Debug for project adm_c16 ****
+19:56:40 **** Incremental Build of configuration Debug for project adm_c16 ****
 make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
 arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
    text	   data	    bss	    dec	    hex	filename
-  12504	     20	   3492	  16016	   3e90	adm_c16.elf
+  12524	     20	   3492	  16036	   3ea4	adm_c16.elf
 Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:01:47 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:167:28: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'const short unsigned int'} changes value from '65555' to '19' [-Woverflow]
-  167 |  const uint16_t factor16 = 65555;
-      |                            ^~~~~
-../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
-  158 |  const uint32_t Resultado = asm_sum(5, 3);
-      |                 ^~~~~~~~~
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12528	     20	   3492	  16040	   3ea8	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:02:40 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
-  158 |  const uint32_t Resultado = asm_sum(5, 3);
-      |                 ^~~~~~~~~
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12532	     20	   3492	  16044	   3eac	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:03:20 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
-  158 |  const uint32_t Resultado = asm_sum(5, 3);
-      |                 ^~~~~~~~~
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12532	     20	   3492	  16044	   3eac	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:09:31 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12532	     20	   3492	  16044	   3eac	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:18:43 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-../Core/Src/asm_func.S: Assembler messages:
-../Core/Src/asm_func.S:131: Error: garbage following instruction -- `bpl .asm_scalar12_capped:'
-make: *** [Core/Src/subdir.mk:44: Core/Src/asm_func.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-23:18:54 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12536	     20	   3492	  16048	   3eb0	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:19:55 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12536	     20	   3492	  16048	   3eb0	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:21:37 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12540	     20	   3492	  16052	   3eb4	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:24:25 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
-  158 |  const uint32_t Resultado = asm_sum(5, 3);
-      |                 ^~~~~~~~~
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12536	     20	   3492	  16048	   3eb0	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
- 
-23:25:08 **** Incremental Build of configuration Debug for project adm_c16 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
-  158 |  const uint32_t Resultado = asm_sum(5, 3);
-      |                 ^~~~~~~~~
-arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adm_c16.elf
- 
-arm-none-eabi-size   adm_c16.elf 
-arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
-arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
-   text	   data	    bss	    dec	    hex	filename
-  12540	     20	   3492	  16052	   3eb4	adm_c16.elf
-Finished building: default.size.stdout
- 
-Finished building: adm_c16.bin
- 
-Finished building: adm_c16.list
  
