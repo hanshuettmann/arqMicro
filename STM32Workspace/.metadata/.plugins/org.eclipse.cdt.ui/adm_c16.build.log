@@ -1,6 +1,5 @@
-15:57:12 **** Incremental Build of configuration Debug for project adm_c16 ****
+23:25:08 **** Incremental Build of configuration Debug for project adm_c16 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
 ../Core/Src/main.c:158:17: warning: unused variable 'Resultado' [-Wunused-variable]
@@ -13,7 +12,7 @@ arm-none-eabi-size   adm_c16.elf
 arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
 arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
    text	   data	    bss	    dec	    hex	filename
-  12204	     20	   3492	  15716	   3d64	adm_c16.elf
+  12540	     20	   3492	  16052	   3eb4	adm_c16.elf
 Finished building: default.size.stdout
  
 Finished building: adm_c16.bin
@@ -21,5 +20,5 @@ Finished building: adm_c16.bin
 Finished building: adm_c16.list
  
 
-15:57:12 Build Finished. 0 errors, 1 warnings. (took 945ms)
+23:25:09 Build Finished. 0 errors, 1 warnings. (took 934ms)
 

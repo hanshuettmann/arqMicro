@@ -201,3 +201,54 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Hans\UBA\Arq 
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-05-30 15:02:39.327
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-05-30 19:49:10.269 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-05-30 19:49:41.477
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-05-30 19:49:41.540
+!MESSAGE Log4j initialized with config file C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-05-30 19:49:53.617
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 21:40:21.812
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 22:12:37.217
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 22:13:44.424
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 22:24:03.168
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 22:24:30.372
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 22:36:54.478
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 22:39:28.324
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 23:03:28.051
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 23:09:37.607
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 23:19:49.191
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 23:20:01.985
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2022-05-30 23:24:32.449
+!MESSAGE Unable to locate file: C:/Hans/UBA/Arq Micro/STM32Workspace/adm_c16/Debug/../Core/Startup/startup_stm32f429zitx.s
