@@ -155,7 +155,6 @@ int main(void) {
 	MX_USB_OTG_FS_PCD_Init();
 	/* USER CODE BEGIN 2 */
 	PrivilegiosSVC();
-	const uint32_t Resultado = asm_sum(5, 3);
 
 	/* USER CODE END 2 */
 

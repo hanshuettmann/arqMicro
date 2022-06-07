@@ -99,3 +99,32 @@ uint32_t getMaxIndex(int32_t *vectorIn, uint32_t length) {
 	return index;
 }
 
+/**
+ * @brief window-based filter of 10 elements
+ * @param vectorIn pointer to int32_t array
+ * @param vectorOut pointer to int32_t array
+ * @param vectorInLength amount of elements in the array
+ * @retval none
+ */
+void windowFilter10(uint16_t *vectorIn, uint16_t *vectorOut,
+		uint32_t vectorInLength) {
+
+}
+
+/**
+ * @brief inverts positions of elements inside a vector
+ * @param vectorIn pointer to int32_t array
+ * @param length amount of elements in the array
+ * @retval none
+ */
+void invertVector(uint16_t *vector, uint32_t length) {
+	uint16_t auxValue = 0;
+
+	/* Exchange the first element with the last one until length/2 */
+	for (uint16_t i = 0; i < length / 2; ++i) {
+		auxValue = vector[i];
+		vector[i] = vector[length - 1 - i];
+		vector[length - 1 - i] = auxValue;
+	}
+}
+

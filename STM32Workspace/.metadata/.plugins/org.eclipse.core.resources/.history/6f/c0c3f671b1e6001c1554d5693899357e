@@ -1,0 +1,137 @@
+/*
+ * functions.c
+ *
+ *  Created on: May 30, 2022
+ *      Author: hansh
+ */
+
+/* Includes ------------------------------------------------------------------*/
+#include "functions.h"
+
+/* Private function prototypes -----------------------------------------------*/
+/**
+ * @brief Initialize vector with zero values
+ * @param vector pointer to array to be 0 initialized
+ * @param length amount of elements in the array
+ * @retval None
+ */
+void zeros(uint32_t *vector, uint32_t length) {
+	uint32_t *const vectorEnd = vector + length;
+
+	for (; vector < vectorEnd; ++vector) {
+		*vector = 0;
+	}
+}
+
+/**
+ * @brief Multiply each element of uint32_t array by scalar
+ * @param vectorIn pointer to uint32_t array to be multiplied
+ * @param vectorOut pointer to uint32_t output array
+ * @param length amount of elements in the array
+ * @retval None
+ */
+void scalar32(uint32_t *vectorIn, uint32_t *vectorOut, uint32_t length,
+		uint32_t scalar) {
+	uint32_t *const vectorEnd = vectorIn + length;
+
+	for (; vectorIn < vectorEnd; ++vectorIn) {
+		*vectorOut = *vectorIn * scalar;
+		++vectorOut;
+	}
+}
+
+/**
+ * @brief Multiply each element of uint16_t array by scalar
+ * @param vectorIn pointer to uint16_t array to be multiplied
+ * @param vectorOut pointer to uint16_t output array
+ * @param length amount of elements in the array
+ * @retval None
+ */
+void scalar16(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
+		uint16_t scalar) {
+	uint16_t *const vectorEnd = vectorIn + length;
+
+	for (; vectorIn < vectorEnd; ++vectorIn) {
+		*vectorOut = *vectorIn * scalar;
+		++vectorOut;
+	}
+}
+
+/**
+ * @brief Multiply each element of array by scalar
+ * @param vectorIn pointer to uint16_t array to be multiplied
+ * @param vectorOut pointer to uint16_t output array
+ * @param length amount of elements in the array
+ * @retval None
+ */
+void scalar12(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
+		uint16_t scalar) {
+	uint16_t *const vectorEnd = vectorIn + length;
+	uint16_t const MAX_VALUE = 4095;
+
+	for (; vectorIn < vectorEnd; ++vectorIn) {
+		/* Remove 4 MSB */
+		*vectorOut = *vectorIn * scalar;
+		if (*vectorOut > MAX_VALUE)
+			*vectorOut = MAX_VALUE;
+		++vectorOut;
+	}
+}
+
+/**
+ * @brief return the index of the maximum value inside vectorIn
+ * @param vectorIn pointer to int32_t array
+ * @param length amount of elements in the array
+ * @retval index
+ */
+uint32_t getMaxIndex(int32_t *vectorIn, uint32_t length) {
+	int32_t maxValue = *vectorIn;
+	int32_t index = 0;
+	int32_t *const vectorEnd = vectorIn + length;
+
+	for (; vectorIn < vectorEnd; ++vectorIn) {
+		if (*vectorIn > maxValue) {
+			maxValue = *vectorIn;
+			index = length - (vectorEnd - vectorIn);
+		}
+	}
+
+	return index;
+}
+
+/**
+ * @brief window-based filter of 10 elements
+ * @param vectorIn pointer to int32_t array
+ * @param vectorOut pointer to int32_t array
+ * @param vectorInLength amount of elements in the array
+ * @retval none
+ */
+void windowFilter10(uint16_t *vectorIn, uint16_t *vectorOut,
+		uint32_t vectorInLength) {
+
+}
+
+/**
+ * @brief inverts positions of elements inside a vector
+ * @param vectorIn pointer to int32_t array
+ * @param length amount of elements in the array
+ * @retval none
+ */
+void invertVector(uint16_t *vector, uint32_t length) {
+	uint16_t *const vectorEnd = vector + length;
+	uint16_t auxValue = 0;
+
+	for (; vector < vectorEnd; ++vector) {
+			aux =
+			*vector = *vectorAux;
+			++vectorAux;
+		}
+
+	vectorAux = vectorEnd + 1;
+
+	for (; vector < vectorEnd; ++vector) {
+		*vector = *vectorAux;
+		++vectorAux;
+	}
+}
+

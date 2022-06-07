@@ -3,3 +3,5 @@
 ../Core/Src/functions.c:50:6:scalar16	32	static
 ../Core/Src/functions.c:67:6:scalar12	32	static
 ../Core/Src/functions.c:87:10:getMaxIndex	32	static
+../Core/Src/functions.c:109:6:windowFilter10	24	static
+../Core/Src/functions.c:120:6:invertVector	24	static
