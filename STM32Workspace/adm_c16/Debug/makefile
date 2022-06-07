@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 -include ../makefile.init
@@ -43,6 +43,9 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 EXECUTABLES += \
 adm_c16.elf \
 
+MAP_FILES += \
+adm_c16.map \
+
 SIZE_OUTPUT += \
 default.size.stdout \
 
@@ -60,7 +63,7 @@ all: main-build
 main-build: adm_c16.elf secondary-outputs
 
 # Tool invocations
-adm_c16.elf: $(OBJS) $(USER_OBJS) C:\Hans\UBA\Arq\ Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+adm_c16.elf adm_c16.map: $(OBJS) $(USER_OBJS) C:\Hans\UBA\Arq\ Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
@@ -82,7 +85,7 @@ adm_c16.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 
 # Other Targets
 clean:
-	-$(RM) adm_c16.bin adm_c16.elf adm_c16.list default.size.stdout
+	-$(RM) adm_c16.bin adm_c16.elf adm_c16.list adm_c16.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

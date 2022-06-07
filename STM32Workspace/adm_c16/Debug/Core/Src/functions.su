@@ -1,4 +1,5 @@
-functions.c:18:6:zeros	24	static
-functions.c:33:6:scalar32	32	static
-functions.c:50:6:scalar16	32	static
-functions.c:67:6:scalar12	32	static
+../Core/Src/functions.c:18:6:zeros	24	static
+../Core/Src/functions.c:33:6:scalar32	32	static
+../Core/Src/functions.c:50:6:scalar16	32	static
+../Core/Src/functions.c:67:6:scalar12	32	static
+../Core/Src/functions.c:87:10:getMaxIndex	32	static

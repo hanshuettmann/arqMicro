@@ -78,3 +78,24 @@ void scalar12(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
 	}
 }
 
+/**
+ * @brief return the index of the maximum value inside vectorIn
+ * @param vectorIn pointer to int32_t array
+ * @param length amount of elements in the array
+ * @retval index
+ */
+uint32_t getMaxIndex(int32_t *vectorIn, uint32_t length) {
+	int32_t maxValue = *vectorIn;
+	int32_t index = 0;
+	int32_t *const vectorEnd = vectorIn + length;
+
+	for (; vectorIn < vectorEnd; ++vectorIn) {
+		if (*vectorIn > maxValue) {
+			maxValue = *vectorIn;
+			index = length - (vectorEnd - vectorIn);
+		}
+	}
+
+	return index;
+}
+
