@@ -108,7 +108,35 @@ uint32_t getMaxIndex(int32_t *vectorIn, uint32_t length) {
  */
 void windowFilter10(uint16_t *vectorIn, uint16_t *vectorOut,
 		uint32_t vectorInLength) {
+	const uint16_t WINDOW_SIZE = 10;
 
+	uint16_t *const vectorEnd = vectorIn + vectorInLength;
+	uint16_t sum = 0;
+	uint16_t *ptrInit = vectorIn;
+	uint16_t *ptrAux = 0;
+
+	for (uint16_t i = 0; i < vectorInLength; ++i) {
+		for (uint16_t j = 0; j < WINDOW_SIZE; ++j) {
+			if (vectorIn + j > vectorEnd - 1) {
+				ptrAux = vectorIn;
+				vectorIn = ptrInit;
+				for (uint16_t k = 0; k < WINDOW_SIZE - j; ++k) {
+					sum += *(vectorIn + k);
+				}
+				vectorIn = ptrAux;
+				break;
+			} else {
+				sum += *(vectorIn + j);
+			}
+		}
+
+		*vectorOut = sum / WINDOW_SIZE;
+		sum = 0;
+
+		++vectorIn;
+		++vectorOut;
+
+	}
 }
 
 /**

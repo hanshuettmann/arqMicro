@@ -156,6 +156,11 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	PrivilegiosSVC();
 
+	uint16_t testing[] = { 0, 1, 2, 3, 4, 5};
+	uint16_t outTesting[sizeof(testing) / sizeof(uint16_t)];
+
+	windowFilter10(testing, outTesting, sizeof(testing) / sizeof(uint16_t));
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
