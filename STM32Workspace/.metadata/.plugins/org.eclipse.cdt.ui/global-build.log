@@ -73,3 +73,413 @@ Finished building: adm_c16.bin
  
 Finished building: adm_c16.list
  
+22:45:46 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12988	     20	   3500	  16508	   407c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+22:58:13 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12996	     20	   3500	  16516	   4084	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:01:06 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12996	     20	   3500	  16516	   4084	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:04:54 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12976	     20	   3492	  16488	   4068	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:06:41 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12968	     20	   3492	  16480	   4060	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:07:43 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12980	     20	   3492	  16492	   406c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:11:40 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12984	     20	   3492	  16496	   4070	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:12:37 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12980	     20	   3492	  16492	   406c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:13:25 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12992	     20	   3492	  16504	   4078	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:14:45 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+../Core/Src/functions.c:167:12: error: expected ';', ',' or ')' before numeric constant
+  167 |   uint32_t 5) {
+      |            ^
+make: *** [Core/Src/subdir.mk:46: Core/Src/functions.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+23:15:01 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12992	     20	   3492	  16504	   4078	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:16:12 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  13000	     20	   3492	  16512	   4080	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:17:13 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  13000	     20	   3492	  16512	   4080	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:21:40 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  13000	     20	   3492	  16512	   4080	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:30:39 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12952	     20	   3492	  16464	   4050	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:32:50 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+23:56:46 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+00:00:17 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+00:09:38 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-size   adm_c16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+00:31:03 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+00:36:52 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+00:41:25 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/functions.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/functions.d" -MT"Core/Src/functions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/functions.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+00:44:44 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+00:46:18 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 
+00:48:15 **** Incremental Build of configuration Debug for project adm_c16 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adm_c16.elf
+ 
+arm-none-eabi-size   adm_c16.elf 
+arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
+arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	adm_c16.elf
+Finished building: default.size.stdout
+ 
+Finished building: adm_c16.bin
+ 
+Finished building: adm_c16.list
+ 

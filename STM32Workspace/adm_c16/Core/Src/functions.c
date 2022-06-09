@@ -156,3 +156,36 @@ void invertVector(uint16_t *vector, uint32_t length) {
 	}
 }
 
+/**
+ * @brief eliminates one element every N samples
+ * @param vectorIn pointer to int32_t array
+ * @param vectorOut pointer to int32_t array
+ * @param length amount of elements in the array
+ * @retval none
+ */
+void removeSample(int32_t *vectorIn, int32_t *vectorOut, uint32_t length,
+		uint32_t N) {
+	uint32_t i = 0;
+	uint32_t j = 0;
+
+	while (i < length + 1) {
+		if (i % (N + 1) != 0) {
+			vectorOut[j] = vectorIn[i - 1];
+			++j;
+		}
+		++i;
+	}
+}
+
+/**
+ * @brief packs the vectorIn elements into 16 bits
+ * @param vectorIn pointer to int32_t array
+ * @param vectorOut pointer to int16_t array
+ * @param length amount of elements in the array
+ * @retval none
+ */
+void pack32to16(int32_t *vectorIn, int16_t *vectorOut, uint32_t length) {
+	for (uint32_t i = 0; i < length; ++i) {
+		vectorOut[i] = (int16_t) (vectorIn[i]);
+	}
+}

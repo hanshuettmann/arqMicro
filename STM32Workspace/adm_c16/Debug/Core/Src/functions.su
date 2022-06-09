@@ -5,3 +5,5 @@
 ../Core/Src/functions.c:87:10:getMaxIndex	32	static
 ../Core/Src/functions.c:109:6:windowFilter10	48	static
 ../Core/Src/functions.c:148:6:invertVector	24	static
+../Core/Src/functions.c:166:6:removeSample	32	static
+../Core/Src/functions.c:187:6:pack32to16	32	static
