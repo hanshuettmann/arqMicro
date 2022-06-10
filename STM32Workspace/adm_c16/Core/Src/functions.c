@@ -186,6 +186,6 @@ void removeSample(int32_t *vectorIn, int32_t *vectorOut, uint32_t length,
  */
 void pack32to16(int32_t *vectorIn, int16_t *vectorOut, uint32_t length) {
 	for (uint32_t i = 0; i < length; ++i) {
-		vectorOut[i] = (int16_t) (vectorIn[i]);
+		vectorOut[i] = (int16_t) (vectorIn[i] >> 16);
 	}
 }

@@ -493,3 +493,18 @@ org.eclipse.core.runtime.AssertionFailedException: assertion failed: The applica
 
 !ENTRY org.eclipse.core.jobs 2 2 2022-06-09 00:51:35.656
 !MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2022-06-09 21:15:33.178 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-06-09 21:15:38.126
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-06-09 21:15:38.199
+!MESSAGE Log4j initialized with config file C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-06-09 21:15:44.784
+!MESSAGE Started RMI Server, listening on port 41337
