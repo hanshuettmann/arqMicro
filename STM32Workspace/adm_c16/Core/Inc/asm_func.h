@@ -11,3 +11,4 @@ void asm_scalar16(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
 		uint16_t scalar);
 void asm_scalar12(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
 		uint16_t scalar);
+void asm_invertVector(uint16_t *vector, uint32_t length);

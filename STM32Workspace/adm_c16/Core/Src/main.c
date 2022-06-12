@@ -156,10 +156,10 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	PrivilegiosSVC();
 
-	int32_t testing[] = { 65280, -65280 };
-	int16_t outTesting[sizeof(testing) / sizeof(int32_t)];
+	uint16_t testing[] = { 0, 1, 2, 3, 4, 5 };
+	uint32_t length = sizeof(testing) / sizeof(uint16_t);
 
-	pack32to16(testing, outTesting, sizeof(testing) / sizeof(int32_t));
+	asm_invertVector(testing, length);
 
 	/* USER CODE END 2 */
 

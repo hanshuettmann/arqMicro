@@ -9,6 +9,7 @@
 .global asm_scalar32
 .global asm_scalar16
 .global asm_scalar12
+.global asm_invertVector
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ Prototipo en "C":
@@ -145,6 +146,41 @@
         strh r4, [r1], 2    @ sizeof(uint16_t) == 2, *vectorOut++ = r4
         subs r2, 1          @ --longitud
         bne .asm_scalar12_loop
+        pop {r5}
+        pop {r4}
+        bx lr
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Prototipo en "C":
+@   void asm_invertVector(uint16_t *vector, uint32_t length);
+@
+@ Parametros recibidos:
+@   r0: *vector
+@	r1: length
+@	r2: auxValue1
+@	r3: auxValue2
+@	r4: length - 1 - i
+@	r5: index
+.thumb_func
+    asm_invertVector:
+    	push {r4}
+    	push {r5}
+    	mov r5, #0			@index = 0
+    .asm_invertVector_loop:
+    	ldrh r2, [r0, r5, lsl 1]	@ r2 = *(r0 + i*2) -> auxValue1 = vector[i*2]
+    	mov r4, r1					@ r4 = length
+    	sub r4, 1					@ r4 = length - 1
+    	sub r4, r5					@ r4 = length - 1 - i -> will be the offset for the last element
+    	ldrh r3, [r0, r4, lsl 1]			@ r3 = vector[length - 1 - i] -> auxValue2 = vector[length - 1 - i]
+
+    	strh r3, [r0, r5, lsl 1]			@*(r0 + i) = *(r0 + length - 1 - i)
+    	strh r2, [r0, r4, lsl 1] 			@*(r0 + length - 1 - i) = *(r0 + i)
+
+		add r5, 1
+		mov r4, r1, lsr 1   @ r4 = r1 / 2
+		cmp r5, r4			@ r5 - r4 -> i - length / 2
+        bne .asm_invertVector_loop @ go to .asm_invertVector_loop: if i - length / 2 = 0
+
         pop {r5}
         pop {r4}
         bx lr

@@ -508,3 +508,36 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Hans\UBA\Arq 
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-06-09 21:15:44.784
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-06-11 16:36:52.172 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-06-11 16:36:57.990
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-06-11 16:36:58.092
+!MESSAGE Log4j initialized with config file C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-06-11 16:37:04.620
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-06-11 18:40:23.577 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-06-11 18:40:33.173
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-06-11 18:40:48.906
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-06-11 18:40:49.125
+!MESSAGE Log4j initialized with config file C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-06-11 18:41:19.574
+!MESSAGE Started RMI Server, listening on port 41337
