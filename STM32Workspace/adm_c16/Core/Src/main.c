@@ -156,10 +156,11 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	PrivilegiosSVC();
 
-	uint16_t testing[] = { 0, 1, 2, 3, 4, 5 };
-	uint32_t length = sizeof(testing) / sizeof(uint16_t);
+	int32_t testing[] = { 120, 2, 3, 1, -10, -100 };
+	int16_t out[] = { 0, 0, 0, 0, 0, 0 };
+	uint32_t length = sizeof(testing) / sizeof(int32_t);
 
-	asm_invertVector(testing, length);
+	uint32_t index = asm_getMaxIndex(testing, length);
 
 	/* USER CODE END 2 */
 

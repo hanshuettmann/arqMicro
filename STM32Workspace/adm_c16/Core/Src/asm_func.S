@@ -2,7 +2,7 @@
 .thumb
 .text
 
-@ Simbolos exportados
+@ Exported symbols
 .global asm_svc
 .global asm_sum
 .global asm_zeros
@@ -10,9 +10,12 @@
 .global asm_scalar16
 .global asm_scalar12
 .global asm_invertVector
+.global asm_removeSample
+.global asm_pack32to16
+.global asm_getMaxIndex
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Prototipo en "C":
+@ Prototype "C":
 @   void asm_svc (void)
 @
 .thumb_func
@@ -22,15 +25,15 @@
 
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Prototipo en "C":
+@ Prototype "C":
 @   uint32_t asmSum (uint32_t firstOperand, uint32_t secondOperand)
 @
-@ Parametros recibidos:
+@ Received params:
 @   r0: firstOperand
 @   r1: secondOperand
 @
-@ Valor de retorno:
-@   r0: resultado de la suma de firstOperand y secondOperand
+@ Returned value:
+@   r0: firstOperand + secondOperand result
 @
 .thumb_func
     asm_sum:
@@ -48,10 +51,10 @@
         @ push {lr} ... pop {pc}
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Prototipo en "C":
+@ Prototype "C":
 @   void asm_zeros (uint32_t *vector, uint32_t longitud);
 @
-@ Parametros recibidos:
+@ Received params:
 @   r0: *vector
 @   r1: longitud
 @
@@ -67,11 +70,11 @@
         bx lr
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Prototipo en "C":
+@ Prototype "C":
 @   void asm_scalar32(uint32_t *vectorIn, uint32_t *vectorOut, uint32_t length,
 @	uint32_t scalar);
 @
-@ Parametros recibidos:
+@ Received params:
 @   r0: *vectorIn
 @   r1: *vectorOut
 @	r2: length
@@ -95,7 +98,7 @@
 @   void asm_scalar16(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
 @	uint16_t scalar);
 @
-@ Parametros recibidos:
+@ Received params:
 @   r0: *vectorIn
 @   r1: *vectorOut
 @	r2: length
@@ -115,15 +118,16 @@
         bx lr
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Prototipo en "C":
+@ Prototype "C":
 @   void asm_scalar12(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
 @	uint16_t scalar);
 @
-@ Parametros recibidos:
+@ Registers used:
 @   r0: *vectorIn
 @   r1: *vectorOut
 @	r2: length
 @	r3: scalar
+@
 @	*vectorOut = *vectorIn * scalar;
 @	++vectorOut;
 .thumb_func
@@ -151,12 +155,13 @@
         bx lr
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Prototipo en "C":
+@ Prototype "C":
 @   void asm_invertVector(uint16_t *vector, uint32_t length);
 @
-@ Parametros recibidos:
+@ Received params:
 @   r0: *vector
 @	r1: length
+@ Registers used:
 @	r2: auxValue1
 @	r3: auxValue2
 @	r4: length - 1 - i
@@ -179,8 +184,106 @@
 		add r5, 1
 		mov r4, r1, lsr 1   @ r4 = r1 / 2
 		cmp r5, r4			@ r5 - r4 -> i - length / 2
-        bne .asm_invertVector_loop @ go to .asm_invertVector_loop: if i - length / 2 = 0
+        bne .asm_invertVector_loop @ go to .asm_invertVector_loop: if i - length / 2 != 0
 
         pop {r5}
         pop {r4}
         bx lr
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Prototype "C":
+@   void removeSample(int32_t *vectorIn, int32_t *vectorOut, uint32_t length,
+@		uint32_t N);
+@
+@ Received params:
+@   r0: *vectorIn
+@	r1: *vectorOut
+@	r2: length
+@	r3: N
+@ Registers used:
+@	r4: index i
+@	r5: index j
+@	r6: auxValue
+.thumb_func
+    asm_removeSample:
+    	push {r4}
+    	push {r5}
+    	push {r6}
+    	mov r4, #0			@index i = 0
+		mov r5, #0			@index j = 0
+    .asm_removeSample_loop:
+    	mov r6, 12
+		sdiv r6, r2
+		str r6, [r1]
+
+    	add r4, 1			@ r4 += 1
+    	mov r6, r2			@ r6 = length
+		add r6, 1			@ r6 += 1
+		cmp r4, r6			@ r4 - r6 -> i - length + 1
+        bne .asm_removeSample_loop @ go to .asm_removeSample_loop: if i - length + 1 != 0
+
+		pop {r6}
+        pop {r5}
+        pop {r4}
+        bx lr
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Prototype "C":
+@   void pack32to16(int32_t *vectorIn, int16_t *vectorOut, uint32_t length);
+@
+@ Received params:
+@   r0: *vectorIn
+@	r1: *vectorOut
+@	r2: length
+@ Registers used:
+@	r3: auxValue
+.thumb_func
+    asm_pack32to16:
+    .asm_pack32to16_loop:
+    	ldrsh r3, [r0], 4		 @ r3 = r0*, ++r0
+		strh r3, [r1], 2
+
+    	subs r2, 1				 @ --length
+        bne .asm_pack32to16_loop @ go to .asm_pack32to16_loop: if length != 0
+
+        bx lr
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Prototype "C":
+@   uint32_t getMaxIndex(int32_t *vectorIn, uint32_t length);
+@
+@ Received params:
+@   r0: *vectorIn
+@	r1: length
+@ Registers used:
+@	r2: index
+@	r3: auxValue
+@	r4: auxMax
+@	r5: auxIndex
+.thumb_func
+    asm_getMaxIndex:
+    	push {r4}
+    	push {r5}
+    	mov r2, 0
+    	mov r3, 0
+    	ldr r4, [r0]				@ auxMax = vectorIn[0]
+    	mov r5, 0
+    .asm_getMaxIndex_loop:
+    	ldr r3, [r0], 4				@ auxValue = vectorIn[i], ++vectorIn
+    	cmp	r3, r4					@ r3 - r4 -> current value greater than auxMax
+		bpl .asm_getMaxIndex_load
+
+	.asm_getMaxIndex_finish:
+		add r2, 1					@ ++index
+    	subs r1, 1					@ --length
+        bne .asm_getMaxIndex_loop	@ go to .asm_getMaxIndex_loop: if length != 0
+
+		mov r0, r5					@ r0 = maxindex
+		pop {r5}
+		pop {r4}
+        bx lr
+
+	.asm_getMaxIndex_load:
+    	mov r4, r3					@ auxMax = auxValue(currentValue)
+        mov	r5, r2					@ auxIndex = index
+        b .asm_getMaxIndex_finish

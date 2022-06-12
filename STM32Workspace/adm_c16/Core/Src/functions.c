@@ -86,7 +86,7 @@ void scalar12(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
  */
 uint32_t getMaxIndex(int32_t *vectorIn, uint32_t length) {
 	int32_t maxValue = *vectorIn;
-	int32_t index = 0;
+	uint32_t index = 0;
 	int32_t *const vectorEnd = vectorIn + length;
 
 	for (; vectorIn < vectorEnd; ++vectorIn) {
