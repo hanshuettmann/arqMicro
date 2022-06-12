@@ -217,14 +217,12 @@
     	add r6, r3, 1			@ r6 = N + 1
 		udiv r7, r4, r6			@ r7 = i / (N + 1)
 		mul r7, r6
-		subs r7, r4, r7
-		bne .asm_removeSample_load
+		sub r4, r7
 
-	.asm_removeSample_finish:
     	add r4, 1			@ index i += 1
     	mov r6, r2			@ r6 = length
 		add r6, 1			@ r6 += 1
-		subs r7, r4, r6			@ r4 - r6 -> i - length + 1
+		cmp r4, r6			@ r4 - r6 -> i - length + 1
         bne .asm_removeSample_loop @ go to .asm_removeSample_loop: if i - length + 1 != 0
 
     	pop {r7}
@@ -233,12 +231,6 @@
         pop {r4}
         bx lr
 
-	.asm_removeSample_load:
-		sub r7, r4, 1		@ r7 = i - 1
-		ldr r6, [r0, r7, lsl 2]	@ r6 = vectorIn[i - 1]
-		str r6, [r1, r5, lsl 2]	@ vectorOunt[j] = r6
-		add r5, 1			@ ++j
-		b .asm_removeSample_finish
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ Prototype "C":
 @   void pack32to16(int32_t *vectorIn, int16_t *vectorOut, uint32_t length);

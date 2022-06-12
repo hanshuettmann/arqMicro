@@ -1,13 +1,6 @@
-13:24:17 **** Incremental Build of configuration Debug for project adm_c16 ****
+16:38:08 **** Incremental Build of configuration Debug for project adm_c16 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:163:11: warning: unused variable 'index' [-Wunused-variable]
-  163 |  uint32_t index = asm_getMaxIndex(testing, length);
-      |           ^~~~~
-../Core/Src/main.c:160:10: warning: unused variable 'out' [-Wunused-variable]
-  160 |  int16_t out[] = { 0, 0, 0, 0, 0, 0 };
-      |          ^~~
 arm-none-eabi-gcc -o "adm_c16.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Hans\UBA\Arq Micro\arqMicro\STM32Workspace\adm_c16\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adm_c16.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: adm_c16.elf
  
@@ -15,7 +8,7 @@ arm-none-eabi-size   adm_c16.elf
 arm-none-eabi-objdump -h -S  adm_c16.elf  > "adm_c16.list"
 arm-none-eabi-objcopy  -O binary  adm_c16.elf  "adm_c16.bin"
    text	   data	    bss	    dec	    hex	filename
-  13044	     20	   3492	  16556	   40ac	adm_c16.elf
+  13068	     20	   3492	  16580	   40c4	adm_c16.elf
 Finished building: default.size.stdout
  
 Finished building: adm_c16.bin
@@ -23,5 +16,5 @@ Finished building: adm_c16.bin
 Finished building: adm_c16.list
  
 
-13:24:18 Build Finished. 0 errors, 2 warnings. (took 802ms)
+16:38:08 Build Finished. 0 errors, 0 warnings. (took 820ms)
 

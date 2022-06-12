@@ -160,7 +160,7 @@ int main(void) {
 	int32_t out[] = { 0, 0, 0, 0, 0 };
 	uint32_t length = sizeof(testing) / sizeof(int32_t);
 
-	asm_removeSample(testing, out, length, 3);
+	asm_removeSample(testing, out, length, 2);
 
 	/* USER CODE END 2 */
 

@@ -157,10 +157,10 @@ int main(void) {
 	PrivilegiosSVC();
 
 	int32_t testing[] = { 0, 1, 2, 3, 4 };
-	int32_t out[] = { 0, 0, 0, 0, 0 };
+	int32_t out[] = { 0, 0, 0, 0, 0, 0 };
 	uint32_t length = sizeof(testing) / sizeof(int32_t);
 
-	asm_removeSample(testing, out, length, 3);
+	removeSample(testing, out, length, 2);
 
 	/* USER CODE END 2 */
 
