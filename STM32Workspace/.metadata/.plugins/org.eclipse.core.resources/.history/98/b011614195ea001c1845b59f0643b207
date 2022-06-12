@@ -139,7 +139,7 @@
     .asm_scalar12_sat_loop:
     	ldrh r4, [r0], 2	@ r4 = *r0, r0 += 2
         mul r4, r3			@ r4 = r4 * r3
-        usat r4, 12, r4		@ saturates to 12 bits
+        usat r4, 12, r4
 
         strh r4, [r1], 2    @ sizeof(uint16_t) == 2, *vectorOut++ = r4
         subs r2, 1          @ --longitud

@@ -156,11 +156,11 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	PrivilegiosSVC();
 
-	uint16_t testing[] = { 2000, 2000, 2000 };
-	uint16_t out[] = { 0, 0, 0 };
-	uint16_t length = sizeof(testing) / sizeof(uint16_t);
+	int32_t testing[] = { 0, 1, 2, 3, 4, 5, 6 };
+	int32_t out[] = { 0, 0, 0, 0, 0, 0, 0 };
+	uint32_t length = sizeof(testing) / sizeof(int32_t);
 
-	asm_scalar12_sat(testing, out, length, 50000);
+	asm_removeSample(testing, out, length, 3);
 
 	/* USER CODE END 2 */
 

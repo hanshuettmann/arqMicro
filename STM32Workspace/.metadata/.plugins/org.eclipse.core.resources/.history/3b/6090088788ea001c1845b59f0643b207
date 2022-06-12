@@ -9,7 +9,6 @@
 .global asm_scalar32
 .global asm_scalar16
 .global asm_scalar12
-.global asm_scalar12_sat
 .global asm_invertVector
 .global asm_removeSample
 .global asm_pack32to16
@@ -132,36 +131,6 @@
 @	*vectorOut = *vectorIn * scalar;
 @	++vectorOut;
 .thumb_func
-    asm_scalar12_sat:
-    	push {r4}
-    	push {r5}
-    	mov r5, 0x0FFF
-    .asm_scalar12_sat_loop:
-    	ldrh r4, [r0], 2	@ r4 = *r0, r0 += 2
-        mul r4, r3			@ r4 = r4 * r3
-        usat r4, 12, r4		@ saturates to 12 bits
-
-        strh r4, [r1], 2    @ sizeof(uint16_t) == 2, *vectorOut++ = r4
-        subs r2, 1          @ --longitud
-        bne .asm_scalar12_sat_loop
-        pop {r5}
-        pop {r4}
-        bx lr
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Prototype "C":
-@   void asm_scalar12_sat(uint16_t *vectorIn, uint16_t *vectorOut, uint16_t length,
-@	uint16_t scalar);
-@
-@ Registers used:
-@   r0: *vectorIn
-@   r1: *vectorOut
-@	r2: length
-@	r3: scalar
-@
-@	*vectorOut = *vectorIn * scalar;
-@	++vectorOut;
-.thumb_func
     asm_scalar12:
     	push {r4}
     	push {r5}
@@ -247,8 +216,9 @@
     .asm_removeSample_loop:
     	add r6, r3, 1			@ r6 = N + 1
 		udiv r7, r4, r6			@ r7 = i / (N + 1)
-		mul r7, r6
-		subs r7, r4, r7
+		@mul r7, r6
+		@subs r7, r4, r7
+		mls r7, r7, r6, r4
 		bne .asm_removeSample_load
 
 	.asm_removeSample_finish:
