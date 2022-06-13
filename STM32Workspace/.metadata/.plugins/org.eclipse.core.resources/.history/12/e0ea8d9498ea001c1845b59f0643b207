@@ -191,21 +191,14 @@ void pack32to16(int32_t *vectorIn, int16_t *vectorOut, uint32_t length) {
 }
 
 /**
- * @brief gets the correlation vector between vectorX and vectorY
+ * @brief saves the correlation vector between vectorX and vectorY
  * @param vectorX pointer to int16_t array
  * @param vectorY pointer to int16_t array
  * @param vectorCorr pointer to int16_t array
  * @param length amount of elements in the array
  * @retval none
  */
-void corr(int16_t *vectorX, int16_t *vectorY, int16_t *vectorCorr,
-		uint32_t length) {
+void corr(int16_t *vectorX, int16_t *vectorY, int16_t *vectorCorr, uint32_t length) {
 
-	for (int16_t j = 0; j < length; ++j) {
-		for (uint16_t i = 0; i < length; ++i) {
-			if (i - j >= 0)
-				vectorCorr[j] += vectorX[i] * vectorY[i - j];
-		}
-	}
 }
 

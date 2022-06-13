@@ -200,11 +200,12 @@ void pack32to16(int32_t *vectorIn, int16_t *vectorOut, uint32_t length) {
  */
 void corr(int16_t *vectorX, int16_t *vectorY, int16_t *vectorCorr,
 		uint32_t length) {
+	int16_t j = 0;
+	uint16_t i = 0
 
-	for (int16_t j = 0; j < length; ++j) {
-		for (uint16_t i = 0; i < length; ++i) {
-			if (i - j >= 0)
-				vectorCorr[j] += vectorX[i] * vectorY[i - j];
+	for(; j < length; ++j){
+		for (; i < length; ++i) {
+			vectorCorr[j] = vectorX[i] * vectorY[i - j]
 		}
 	}
 }
