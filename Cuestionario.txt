@@ -15,7 +15,7 @@ CortexM3/M4: procesadores de mayor performance que los M0. Presentan una arquite
 
 4- Los procesadores Cortex M cuentan con un mapa de memoria lineal plano de 4 GB. El mapa se encuentra dividido en distintas regiones, donde todas las funcionalidades del micro (como por ejemplo, los periféricos) están mapeadas en esta memoria.
 
-5- Favorecen la posibilidad de implementar un OS más eficiente y más confiable sobre los Cortex-M. El OS puede definir las regiones del stack permitidas para cada tarea evitando escribir sobre regiones de memoria no asignadas.
+5- El stack pointer del OS (MSP) y el stack pointer de las tareas de aplicación (PSP) favorecen la posibilidad de implementar un OS más eficiente y más confiable sobre los Cortex-M. El OS puede definir las regiones del stack permitidas para cada tarea evitando escribir sobre regiones de memoria no asignadas.
 
 7- Se dice que la arquitectura del Cortex es ortogonal ya que en general todos los registros de memoria son de propósito general y todos pueden funcionar como parámetros de las instrucciones de manera indistinta.
 
@@ -27,23 +27,40 @@ HardFault: Similares a las interrupciones diparadas por errores de condición. G
 
 10- Utilizada para almacenar datos de forma temporal a través de "push" y "pop" que permiten "tomar" y "liberar" registros para su manipulación. Para el llamado a funciones, la arquitectura copia los valores de los parámetros de entrada y salida sobre los primeros 4 registros de propósito general.
 
+11- En primer lugar luego del reset se lee la primera dirección del mapa de memoria (dirección inicial del MSP). Posteriormente se lee la segunda posición del mapa (vector del reset de inicio). Finalmente, las direcciones son guardadas en MSP y en el PC respectivamente.
+
 12- Son los periféricos definidos por el fabricante alojados en el core del microcontrolador.
 
 13- Las interrupciones tienen un determinado nivel de prioridad, siendo el nivel 0 el de mayor prioridad. Cuanto más alto el número, menor es la prioridad. Se pueden configurar hasta 240 interrupciones y pueden definirse sub-prioridades para interrupciones seteadas con la misma prioridad. Las interrupciones serán atendidas desde la de más alta prioridad a la más baja.
 
 14- CMSIS es una capa de abstracción de hardware (HAL) para la serie de procesadores Cortex-M utilizada como interfaz de software para periféricos, RTOS, middlewares, etc, permitiendo consistencia y portabilidad entre distintos dispositivos. Gran parte de la HAL está definida por ARM. Por otra parte, el software necesario para el resto de periféricos del microcontrolador son implementados por el fabricante bajo lineamiento y estándar CMSIS.
 
-17- Reloj del sistema definido por ARM. Utilizado para contar tiempos de tareas. Implementado por RTOS como base de tiempo. Cada cuenta hace un nuevo llamado al scheduler.
+15- 
+
+17.1-
+
+16-
+
+17.2- Reloj del sistema definido por ARM. Utilizado para contar tiempos de tareas. Implementado por RTOS como base de tiempo. Cada cuenta hace un nuevo llamado al scheduler.
 
 18- Permite definir accesos privilegiados y no privilegiados a determinados espacios de memoria, limitando acceso a recursos a través del MPU. Es decir, puede quitar la capacidad de acceso a determinadas secciones de la memoria.
 
-20- Excepción que utiliza el SO para realizar tareas que demandan tiempo. Normalmente se le asigna la prioridad más baja.
+19- 
+
+20- Excepción que utiliza el SO para realizar tareas que demandan tiempo. Normalmente se le asigna la prioridad más baja. Se utiliza para realizar los cambios de contexto.
+
+21- 
 
 ISA (Instruction Set Architecture)
 
 1- Los sufijos son opciones que pueden agregarse a la instrucción para realizar tareas distintas como corrimiento de bits o desplazamientos.
 
-2- El sufijo 's' se utiliza para actualizar los flags de estado.
+2- El sufijo 's' se utiliza para indicar a una instrucción que debe actualizar los flags de estado. Ej: "SUBS r0, r3" indica que debe realizarse una resta entre los valores de los registros r0 y r3 cuyo resultado debe actualizar los flags de estado ( ej EQ si el resultado es igual a 0).
+
+3- Permite realizar una operación de saturación a partir de una única instrucción. Ej:
+        mul r4, r3		@ r4 = r4 * r3
+        usat r4, #sat, r4	@ saturates to #sat bits
+De esta forma, a través de USAT puedo saturar a #sat bits el valor del producto r4 * r3 de forma directa evitando que el resultado supere el valor máximo posible.
 
 4- Por convención del fabricante, los argumentos de las funciones son recibidos en los primeros 4 registros de propósito general r0, r1, r2 y r3. Si son necesarios más de 4 parámetros, es necesario utilizar el stack para la copia y uso de parámetros. El resultado de la función es almacenado para su retorno en r0 en caso de ser de 32 bits ó en r0 y r1 en caso de ser de 64bits. Para poder regresar a la dirección de memoria correspondiente, se utiliza el link register lr para almacenar la dirección de la instrucción siguiente a la función que se ha llamado actualmente.
 
