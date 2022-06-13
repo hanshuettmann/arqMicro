@@ -11,15 +11,25 @@ CortexM3/M4: procesadores de mayor performance que los M0. Presentan una arquite
 
 2-  Se dice que el set de instrucciones Thumb permite mayor densidad de código ya que permite realizar las mismas tareas empleando un tamaño de programa menor, reduciendo costo y consumo de energíá al utilizar un microcontrolador con menor tamaño de memoria flash.
 
-3- Compuesta por 2 instrucciones de acceso a memoria, una carga el registro, (luego se realizan operaciones aritmético/lógicas, artimética saturada, etc)  y la otra guarda de registro de nuevo a memoria. Todo tipo de instrucciones excepto 2 funcionan de esta manera. 
+3- Significa que la arquitectura implementa 2 instrucciones de acceso a memoria, una carga el registro, (luego se realizan operaciones aritmético/lógicas, artimética saturada, etc)  y la otra guarda de registro de nuevo a memoria. Esto significa que no podrán realizarse entonces operaciones CISC donde un operando pueda estar en memoria y el otro en registro.
 
 4- Los procesadores Cortex M cuentan con un mapa de memoria lineal plano de 4 GB. El mapa se encuentra dividido en distintas regiones, donde todas las funcionalidades del micro (como por ejemplo, los periféricos) están mapeadas en esta memoria.
 
+5- Favorecen la posibilidad de implementar un OS más eficiente y más confiable sobre los Cortex-M. El OS puede definir las regiones del stack permitidas para cada tarea evitando escribir sobre regiones de memoria no asignadas.
+
 7- Se dice que la arquitectura del Cortex es ortogonal ya que en general todos los registros de memoria son de propósito general y todos pueden funcionar como parámetros de las instrucciones de manera indistinta.
 
-8- Se agrega sufijo para saber si debe ejecutarse o no, convirtiendo la instrucción en un NOP en caso de no ejecutarse. De esta manera, puede ejecutarse un programa sin hacer saltos cuando desee hacerse una instrucción condicional mejorando también la performance.
+8- Permite implementar ejecuciones de la forma "If-then, else". Se agrega sufijo para saber si debe ejecutarse o no según el valor de los flags de estado, convirtiendo la instrucción en un NOP en caso de no ejecutarse. De esta manera, puede ejecutarse un programa sin hacer saltos (branches) cuando desee hacerse una instrucción condicional mejorando la performance.
 
-13- Las interrupciones tienen un determinado nivel de prioridad, siendo el nivel 0 el de mayor prioridad. Cuanto más alto el número, menor es la prioridad.
+9- Reset: Excepción que se dispara cuando se reinicia el microcontrolador.
+NMI (non maskable interrupt): interrupciones que no pueden ser ignoradas por el microcontrolador. Se utilizan generalmente para atender errores de hardware no recuperables.
+HardFault: Similares a las interrupciones diparadas por errores de condición. Generalmente son generadas por eventos como errores en buses, acceso a memorias, violaciones de privilegios, etc.
+
+10- Utilizada para almacenar datos de forma temporal a través de "push" y "pop" que permiten "tomar" y "liberar" registros para su manipulación. Para el llamado a funciones, la arquitectura copia los valores de los parámetros de entrada y salida sobre los primeros 4 registros de propósito general.
+
+12- Son los periféricos definidos por el fabricante alojados en el core del microcontrolador.
+
+13- Las interrupciones tienen un determinado nivel de prioridad, siendo el nivel 0 el de mayor prioridad. Cuanto más alto el número, menor es la prioridad. Se pueden configurar hasta 240 interrupciones y pueden definirse sub-prioridades para interrupciones seteadas con la misma prioridad. Las interrupciones serán atendidas desde la de más alta prioridad a la más baja.
 
 14- CMSIS es una capa de abstracción de hardware (HAL) para la serie de procesadores Cortex-M utilizada como interfaz de software para periféricos, RTOS, middlewares, etc, permitiendo consistencia y portabilidad entre distintos dispositivos. Gran parte de la HAL está definida por ARM. Por otra parte, el software necesario para el resto de periféricos del microcontrolador son implementados por el fabricante bajo lineamiento y estándar CMSIS.
 
