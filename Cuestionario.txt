@@ -15,7 +15,7 @@ CortexM3/M4: procesadores de mayor performance que los M0. Presentan una arquite
 
 4- Los procesadores Cortex M cuentan con un mapa de memoria lineal plano de 4 GB. El mapa se encuentra dividido en distintas regiones, donde todas las funcionalidades del micro (como por ejemplo, los periféricos) están mapeadas en esta memoria.
 
-5- El stack pointer del OS (MSP) y el stack pointer de las tareas de aplicación (PSP) favorecen la posibilidad de implementar un OS más eficiente y más confiable sobre los Cortex-M. El OS puede definir las regiones del stack permitidas para cada tarea evitando escribir sobre regiones de memoria no asignadas.
+5- Físicamente, existen 2 stack pointers en los procesadores Cortex-M. El stack pointer del OS (Main Stack Pointer MSP) y el stack pointer de las tareas de aplicación (Process Stack Pointer PSP) favorecen la posibilidad de implementar un OS más eficiente y más confiable sobre los Cortex-M. El OS puede definir las regiones del stack permitidas para cada tarea evitando escribir sobre regiones de memoria no asignadas.
 
 7- Se dice que la arquitectura del Cortex es ortogonal ya que en general todos los registros de memoria son de propósito general y todos pueden funcionar como parámetros de las instrucciones de manera indistinta.
 
@@ -25,9 +25,9 @@ CortexM3/M4: procesadores de mayor performance que los M0. Presentan una arquite
 NMI (non maskable interrupt): interrupciones que no pueden ser ignoradas por el microcontrolador. Se utilizan generalmente para atender errores de hardware no recuperables.
 HardFault: Similares a las interrupciones diparadas por errores de condición. Generalmente son generadas por eventos como errores en buses, acceso a memorias, violaciones de privilegios, etc.
 
-10- Utilizada para almacenar datos de forma temporal a través de "push" y "pop" que permiten "tomar" y "liberar" registros para su manipulación. Para el llamado a funciones, la arquitectura copia los valores de los parámetros de entrada y salida sobre los primeros 4 registros de propósito general.
+10- Utilizada para almacenar datos de forma temporal a través de "push" y "pop" que permiten "tomar" y "liberar" registros para su manipulación. También es utilizado para pasar información a funciones y subrutinas. Para el llamado a funciones, la arquitectura copia los valores de los parámetros de entrada y salida sobre los primeros 4 registros de propósito general.
 
-11- En primer lugar luego del reset se lee la primera dirección del mapa de memoria (dirección inicial del MSP). Posteriormente se lee la segunda posición del mapa (vector del reset de inicio). Finalmente, las direcciones son guardadas en MSP y en el PC respectivamente.
+11- En primer lugar luego del reset se leen las dos primeras direcciones del mapa de memoria. El comienzo del espacio de memoria contiene la tabla de vectores. Las 2 primeras direcciones de la tabla de vectores contienen los valores iniciales del MSP y del vector de reset que es la dirección inicial del reset handler. Finalmente, el procesador setea el MSP y el PC con estos valores.
 
 12- Son los periféricos definidos por el fabricante alojados en el core del microcontrolador.
 
@@ -35,7 +35,7 @@ HardFault: Similares a las interrupciones diparadas por errores de condición. G
 
 14- CMSIS es una capa de abstracción de hardware (HAL) para la serie de procesadores Cortex-M utilizada como interfaz de software para periféricos, RTOS, middlewares, etc, permitiendo consistencia y portabilidad entre distintos dispositivos. Gran parte de la HAL está definida por ARM. Por otra parte, el software necesario para el resto de periféricos del microcontrolador son implementados por el fabricante bajo lineamiento y estándar CMSIS.
 
-15- 
+15- Luego que un evento de interrupción es lanzado, el procesador primero coloca algunos registros sobre el stack antes de ingresar a la rutina de interrupción ISR. Esta operación recibe el nombre de Stacking. Luego que la ISR es atendida estos registros almacenados en el stack son liberados. Esta última operación recibe el nombre de "Unstacking".
 
 17.1-
 
@@ -45,11 +45,11 @@ HardFault: Similares a las interrupciones diparadas por errores de condición. G
 
 18- Permite definir accesos privilegiados y no privilegiados a determinados espacios de memoria, limitando acceso a recursos a través del MPU. Es decir, puede quitar la capacidad de acceso a determinadas secciones de la memoria.
 
-19- 
+19- Pueden definirse hasta 8 regiones programables. 
 
 20- Excepción que utiliza el SO para realizar tareas que demandan tiempo. Normalmente se le asigna la prioridad más baja. Se utiliza para realizar los cambios de contexto.
 
-21- 
+21- SVC Supervisor Call, llamada previamente Software Interrupt. El software puede utilizar esta excepción como una llamada al OS para proveer un servicio. Por ejemplo, un sistema operativo podría proveer acceso al hardware del microcontrolador a través de una excepción SVC, en vez de permitir a al programador acceder directamente.
 
 ISA (Instruction Set Architecture)
 
